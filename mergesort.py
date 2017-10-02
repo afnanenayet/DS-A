@@ -66,6 +66,7 @@ def merge_helper(arr1, arr2):
 
     return ret
 
+# test
 test1 = [0, 4, 3, 2, 1]
 res1 = mergesort(test1)
 print(res1)
