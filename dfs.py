@@ -35,10 +35,10 @@ def path_helper(parent_map, src, dest):
     :rtype: list """
 
     stack = []
-    stack.append(src)
+    stack.append(dest)
 
-    while stack[len(stack)-1] != dest:
-        stack.append(graph.parent_map[stack[len(stack)-1]])
+    while stack[0] != src:
+        stack.insert(0, parent_map[stack[0]])
 
     return stack
 
@@ -56,3 +56,4 @@ parents = dict()
 dfs(graph, 1, 6)
 print(graph.parents)
 print(path_helper(graph.parents, 1, 6))
+
