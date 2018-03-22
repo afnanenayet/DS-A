@@ -1,8 +1,9 @@
 # generate_subsets.py
 # Afnan Enayet
 # an algorithm to generate all subsets of a set
-# note that this does not currently work likely because of an issue with 
+# note that this does not currently work likely because of an issue with
 # references, but it gets the general idea
+
 
 def gen_subsets(arr):
     """ generates all subsets of a set of elements/list
@@ -35,7 +36,7 @@ def subset_helper(arr, curr_sub, subsets, k):
         return subsets.append(curr_sub)
 
     # Two cases: we either add the current element, or we don't
-    # this creates a new "branch", and from there we call the 
+    # this creates a new "branch", and from there we call the
     # function again
     minus_one = curr_sub
 
@@ -49,7 +50,7 @@ def subset_helper(arr, curr_sub, subsets, k):
     subset_helper(arr, plus_one, subsets, k + 1)
     return subsets
 
+
 # Test
 test_arr = [1, 2]
 print(gen_subsets(test_arr))
-

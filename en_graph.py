@@ -33,7 +33,8 @@ class Edge(object):
     def __init__(self, node: Node = None, neighbor: Node = None,
                  pair: tuple = None, weight=1):
         """ creates a directed edge object that can be initialized by either passing
-        two edges in as arguments, or a tuple pair. If a node, neighbor, and pair are
+        two edges in as arguments, or a tuple pair. If a node, neighbor, and 
+        pair are
         passed in, the node and neighbor will be used to construct the edge
 
         The edge will be constructed as (node, neighbor), or node -> neighbor
