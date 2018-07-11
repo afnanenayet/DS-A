@@ -59,7 +59,7 @@ def add_ll(A: Node, B: Node) -> Node:
     :return: the head of the resultant node
     """
     carry = 0  # the value to carry over for each digit
-    ret = None
+    ret = Node(None)
     head = ret
 
     # define iterators to walk through each linked list
@@ -73,14 +73,8 @@ def add_ll(A: Node, B: Node) -> Node:
         carry = next_digit // base
         digit = next_digit % base
 
-        # initialize the linked list if it hasn't been initialized, otherwise
-        # append to it
-        if ret:
-            ret.next = Node(digit)
-            ret = ret.next
-        else:
-            head = Node(digit)
-            ret = head
+        ret.next = Node(digit)
+        ret = ret.next
 
         # iterate to next
         it_A = it_A.next
@@ -91,14 +85,14 @@ def add_ll(A: Node, B: Node) -> Node:
     # of them are `None`, then their loop will not execute.
     while it_A is not None:
         n = it_A.value + carry
-        ret.next = n % base
+        ret.next = Node(n % base)
         ret = ret.next
         carry = n // base
         it_A = it_A.next
 
     while it_B is not None:
         n = it_B.value + carry
-        ret.next = n % base
+        ret.next = Node(n % base)
         ret = ret.next
         carry = n // base
         it_B = it_B.next
@@ -106,7 +100,7 @@ def add_ll(A: Node, B: Node) -> Node:
     if carry != 0:
         ret.next = Node(carry)
 
-    return head
+    return head.next
 
 
 def ll_to_num(ll: Node) -> int:
@@ -165,13 +159,18 @@ def main():
         ll = num_to_ll(r)
         num = ll_to_num(ll)
         assert(num == r)
+    print("TEST: num -> ll conversion tests passed")
 
+    # making sure that there are no bugs in add_to_ll that are related to
+    # how the list is being constructed
     for _ in range(10000):
         r = random.randint(0, sys.maxsize)
         ll = num_to_ll(r)
         added = add_ll(ll, None)
         num = ll_to_num(added)
         assert(r == num)
+
+    print("TEST: add_ll to 0 tests passed")
 
     # testing the actual addition function
     for _ in range(10000):
@@ -182,10 +181,10 @@ def main():
         ll_b = num_to_ll(b)
 
         ll_res = add_ll(ll_a, ll_b)
-        # res = ll_to_num(ll_res)
+        res = ll_to_num(ll_res)
 
-        # assert(res == (a + b))
-
+        assert(res == (a + b))
+    print("TEST: additional tests passed")
 
 if __name__ == "__main__":
     main()
