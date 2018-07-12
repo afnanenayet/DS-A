@@ -57,6 +57,7 @@ You can see how this is a recursive problem, since each answer builds off of
 the solution for the `n - 1` problem.
 """
 
+
 def hanoi_helper(n: int, source_rod, aux_rod, dest_rod):
     """ Given a number of disks, solves the tower of hanoi puzzle and prints
     out the steps required to win the game.
@@ -69,13 +70,13 @@ def hanoi_helper(n: int, source_rod, aux_rod, dest_rod):
         return
 
     # move rods from source to aux, using the destination as the "auxiliary"
-    hanoi_helper(n-1, source_rod, dest_rod, aux_rod)
+    hanoi_helper(n - 1, source_rod, dest_rod, aux_rod)
 
     # move the last rod from the source to the dest
     print(f"{source_rod} -> {dest_rod}")
 
     # move all rods from aux to dest, using source as the "auxiliary"
-    hanoi_helper(n-1, aux_rod, source_rod, dest_rod)
+    hanoi_helper(n - 1, aux_rod, source_rod, dest_rod)
 
 
 def hanoi(n: int):
