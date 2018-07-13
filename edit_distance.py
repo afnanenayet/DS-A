@@ -43,20 +43,18 @@ def edit_distance(str1, str2):
                 dp[i][j - 1] + 1,  # remove one char from str2
                 # change one letter or don't change a letter (lengths stay the
                 # same)
-                dp[i - 1][j - 1] + c)
+                dp[i - 1][j - 1] + c,
+            )
 
     # print min edit distance between str1[:len(str1)-1], str2[:len(str2)-1]
     return dp[len(str1) - 1][len(str2) - 1]
 
 
 # test
-pairs = [
-    ["hi", "hi"],
-    ["hello", "hi"],
-    ["movie", "love"],
-]
+pairs = [["hi", "hi"], ["hello", "hi"], ["movie", "love"]]
 
 for pair in pairs:
     edit_dist = edit_distance(pair[0], pair[1])
-    print("Edit distance between " + pair[0] + " and " + pair[1] + " is " +
-          str(edit_dist))
+    print(
+        "Edit distance between " + pair[0] + " and " + pair[1] + " is " + str(edit_dist)
+    )

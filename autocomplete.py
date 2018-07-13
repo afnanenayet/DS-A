@@ -54,8 +54,6 @@ def get_suggestions_from_trie(trie: Trie, prefix: str) -> list:
     print(node.val)
     dfs(prefix, node)
 
-    # merge the prefixes and the endings
-
 
 def dfs(prefix: str, node: Node):
     for child in node.children:

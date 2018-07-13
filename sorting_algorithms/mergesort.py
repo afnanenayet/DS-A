@@ -1,7 +1,8 @@
-# mergesort.py 
-# Python3 implementation of mergesort 
+# mergesort.py
+# Python3 implementation of mergesort
 
-import math;
+import math
+
 
 def mergesort(arr):
     """ Implementation of mergesort in Python 3
@@ -22,7 +23,7 @@ def mergesort(arr):
     k = math.ceil(len(arr) / 2)
     arr1 = arr[:k]
     arr2 = arr[k:]
-    
+
     sorted1 = mergesort(arr1)
     sorted2 = mergesort(arr2)
     return merge_helper(sorted1, sorted2)
@@ -35,11 +36,11 @@ def merge_helper(arr1, arr2):
     :rtype: list
     """
 
-    i = 0 # index for arr1
-    j = 0 # index for arr2 
+    i = 0  # index for arr1
+    j = 0  # index for arr2
     ret = list()
 
-    # iterate through both arrays, creating a new list that takes new elements 
+    # iterate through both arrays, creating a new list that takes new elements
     # in increasing order
     while i < len(arr1) and j < len(arr2):
         if arr1[i] < arr2[j]:
@@ -65,6 +66,7 @@ def merge_helper(arr1, arr2):
         j += 1
 
     return ret
+
 
 # test
 test1 = [0, 4, 3, 2, 1]

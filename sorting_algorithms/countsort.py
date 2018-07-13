@@ -4,6 +4,7 @@
 
 import random
 
+
 def count_sort(arr, max_element):
     """ count sort, an O(n) sorting algorithm that just records the frequency
     of each element in an array
@@ -27,6 +28,7 @@ def count_sort(arr, max_element):
             ret.append(i)
     return ret
 
+
 # test by generating random lists and making sure they are equal to python's
 # sorted list (an algorithm we know to be correct)
 success = True
@@ -43,4 +45,3 @@ if success:
     print("Success")
 else:
     print("Error, test failed")
-

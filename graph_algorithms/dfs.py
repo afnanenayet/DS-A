@@ -1,12 +1,14 @@
 # depth first search implemented in Python3
-# note that graphs are represented by a dictionary - the key is the node 
+# note that graphs are represented by a dictionary - the key is the node
 # and the value is a set of neighbors
+
 
 class Graph:
     def __init__(self, node_dict):
         self.visited = set()
         self.nodes = node_dict
         self.parents = dict()
+
 
 def dfs(graph, source, target):
     """ Depth first search with a queue
@@ -56,4 +58,3 @@ parents = dict()
 dfs(graph, 1, 6)
 print(graph.parents)
 print(path_helper(graph.parents, 1, 6))
-

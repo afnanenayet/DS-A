@@ -2,8 +2,9 @@
 # Breadth first search with a queue
 # Afnan Enayet
 #
-# Graph is represented as a map where key is the node, and value is a set 
+# Graph is represented as a map where key is the node, and value is a set
 # of adjacent nodes
+
 
 def bfs(graph, src, target):
     """ breadth first search, assumes graph has no duplicates
@@ -39,4 +40,3 @@ g[4] = set([1, 5])
 g[5] = set([2, 3, 4])
 
 bfs(g, 1, 3)
-

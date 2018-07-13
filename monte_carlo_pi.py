@@ -18,7 +18,7 @@ def circle_area(radius: int) -> float:
     """
     hits = 0
     n = 1000
-    left_bottom = (-1 * radius)
+    left_bottom = -1 * radius
     right_top = radius
 
     for _ in range(n):

@@ -40,6 +40,7 @@ First, we will  add (2 + 5), making our running result 7. Then we will add
 # we can configure what base to do our math in
 base = 10
 
+
 class Node(object):
     """ A simple node for a singly linked list. It has a value and a `next`
     node.
@@ -112,7 +113,7 @@ def ll_to_num(ll: Node) -> int:
     :return: the normal integer form of the linked list
     """
     it: Node = ll
-    assert(type(it) == Node)
+    assert type(it) == Node
     num = 0
     exp = 0
 
@@ -158,7 +159,7 @@ def main():
         r = random.randint(0, sys.maxsize)
         ll = num_to_ll(r)
         num = ll_to_num(ll)
-        assert(num == r)
+        assert num == r
     print("TEST: num -> ll conversion tests passed")
 
     # making sure that there are no bugs in add_to_ll that are related to
@@ -168,7 +169,7 @@ def main():
         ll = num_to_ll(r)
         added = add_ll(ll, None)
         num = ll_to_num(added)
-        assert(r == num)
+        assert r == num
 
     print("TEST: add_ll to 0 tests passed")
 
@@ -183,8 +184,9 @@ def main():
         ll_res = add_ll(ll_a, ll_b)
         res = ll_to_num(ll_res)
 
-        assert(res == (a + b))
+        assert res == (a + b)
     print("TEST: additional tests passed")
+
 
 if __name__ == "__main__":
     main()

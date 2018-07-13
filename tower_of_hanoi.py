@@ -91,10 +91,7 @@ def hanoi(n: int):
 def main():
     """ Wrapper for main function
     """
-    inputs = [
-        3,
-        4,
-    ]
+    inputs = [3, 4]
 
     for disks in inputs:
         print(f"\n\nTowers of Hanoi with {disks} disks\n---\n")
